@@ -15,14 +15,23 @@ export class EmpleadoComponent implements OnInit {
   apellido="Perez";
   edad=21;
   //empresa="Tucuman";
+ 
+  hcuadro=false;
+
+  usuregistrado = false;
+
+  getRegistroUsu(){
+    this.usuregistrado=true;
+  }
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+/*
   llamaEmpresa(value:string){
-    
+
   }
+*/
 
 }

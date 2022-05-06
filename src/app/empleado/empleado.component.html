@@ -2,8 +2,12 @@
 <p>Apellido: {{apellido}}</p>
 <p>Edad: {{edad<18? "Menor de edad":"Mayor de edad"}}</p>
 <p>Empresa: {{empresa.value}}</p>
-
-Introducir la empresa: <input type="text" #empresa (keyup)="0">
+<!--Binding-->
+<!--#empresa es para idetificar un elemento-->
+Introducir la empresa: <input type="text" #empresa (keyup)="0" [disabled]="hcuadro">
 
 <br/>
 <br/> 
+Registrado: <input type="checkbox" id="registro" [checked]="usuregistrado">
+
+{{ getRegistroUsu() }}
