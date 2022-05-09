@@ -14,16 +14,31 @@ export class EmpleadoComponent implements OnInit {
   nombre="Juan";
   apellido="Perez";
   edad=21;
-  //empresa="Tucuman";
- 
+  empresa="Google";
+
+  cambiaEmpresa(event:Event){
+      this.empresa=(<HTMLInputElement>event.target).value;
+  }
   hcuadro=false;
 
   usuregistrado = false;
 
+  textoRegistro="Sin registrado"
+
   getRegistroUsu(){
-    this.usuregistrado=true;
+    this.usuregistrado=false;
   }
 
+  setusuRegistrado(event:Event){
+      //alert("El usuario se acaba de registrar");
+      //this.textoRegistro = "El usuario se registro"
+    //((<HTMLInputElement>event.target),value) Se genera un nuevo objeto.(casting)
+    if ((<HTMLInputElement>event.target).value=="si"){
+      this.textoRegistro="Usuario registrado";
+    }else{  
+      this.textoRegistro="No hay registrado";
+    }
+  }
   constructor() { }
 
   ngOnInit(): void {

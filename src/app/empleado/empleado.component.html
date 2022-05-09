@@ -1,13 +1,23 @@
+<!--interpolacion-->
 <p>Nombre: {{nombre}}</p>
 <p>Apellido: {{apellido}}</p>
+<!--Esto es una condicion de tres-->
 <p>Edad: {{edad<18? "Menor de edad":"Mayor de edad"}}</p>
-<p>Empresa: {{empresa.value}}</p>
-<!--Binding-->
-<!--#empresa es para idetificar un elemento-->
-Introducir la empresa: <input type="text" #empresa (keyup)="0" [disabled]="hcuadro">
+<p>Empresa: {{empresa}}</p>
 
+<!--#empresa es para idetificar un elemento-->
+<!--Property binding []-->
+<!--Introducir la empresa: <input type="text" #empresa (keyup)="0" [disabled]="hcuadro">-->
+
+Introducir la empresa: <input type="text"[(ngModel)]="empresa">
 <br/>
 <br/> 
-Registrado: <input type="checkbox" id="registro" [checked]="usuregistrado">
+<!--Event binding, va entre parentesis el evento "()"
+Se pasa el evento por medio de $event-->
+{{textoRegistro}}
+<br/>
+Registrado: <input type="radio" value="si" name="nregistro"  id="registro" [checked]="usuregistrado"(click)="setusuRegistrado($event)" >
+<br/>
+NoRegistrado: <input type="radio" value="no" name="nregistro"(click)="setusuRegistrado($event)">
 
 {{ getRegistroUsu() }}
